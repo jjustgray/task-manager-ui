@@ -16,5 +16,5 @@
 - Завантажити проєкт на GitHub.
 
 ## Посилання на звіт:
-[Звіт на Google Drive]([https://your-google-drive-link.com](https://docs.google.com/document/d/1NWhpI98wJ6u0TZR_RcS9MSkBmGLaujtuXQ49D-yJnN4/edit?usp=sharing))
+[Звіт на Google Drive](https://docs.google.com/document/d/1NWhpI98wJ6u0TZR_RcS9MSkBmGLaujtuXQ49D-yJnN4/edit?usp=sharing)
 
