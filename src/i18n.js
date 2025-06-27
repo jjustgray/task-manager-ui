@@ -64,7 +64,10 @@ const resources = {
         "cancelEdit": "Скасувати редагування",
         "edit": "Редагувати",
         "delete": "Видалити",
-        "noPastTasks": "Не можна створювати задачі в минулому"
+        "noPastTasks": "Не можна створювати задачі в минулому",
+        "today": "Сьогодні",
+        "tomorrow": "Завтра",
+        "yesterday": "Вчора"
       },
 
       'navbar.dashboard': 'Панель задач',
@@ -134,7 +137,10 @@ const resources = {
         "cancelEdit": "Cancel Edit",
         "edit": "Edit",
         "delete": "Delete",
-        "noPastTasks": "Cannot create tasks in the past"
+        "noPastTasks": "Cannot create tasks in the past",
+        "today": "Today",
+        "tomorrow": "Tomorrow",
+        "yesterday": "Yesterday"
       },
 
       'navbar.dashboard': 'Task Panel',

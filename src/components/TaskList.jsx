@@ -17,15 +17,19 @@ const TaskList = ({ tasks, onEdit, onDelete }) => {
     const today = new Date();
     const tomorrow = new Date();
     const yesterday = new Date();
+
     tomorrow.setDate(today.getDate() + 1);
     yesterday.setDate(today.getDate() - 1);
 
-    const toDateString = (d) => d.toISOString().split('T')[0];
+    const sameDate = (d1, d2) =>
+      d1.getFullYear() === d2.getFullYear() &&
+      d1.getMonth() === d2.getMonth() &&
+      d1.getDate() === d2.getDate();
 
-    const input = toDateString(date);
-    if (input === toDateString(today)) return 'Сьогодні';
-    if (input === toDateString(tomorrow)) return 'Завтра';
-    if (input === toDateString(yesterday)) return 'Вчора';
+    if (sameDate(date, today)) return t('dashboard.today');
+    if (sameDate(date, tomorrow)) return t('dashboard.tomorrow');
+    if (sameDate(date, yesterday)) return t('dashboard.yesterday');
+    
     return date.toLocaleDateString();
   };
 
