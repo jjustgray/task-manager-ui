@@ -26,4 +26,4 @@
 Додати створені файли у репозиторій ЛР№1 на github.com.
 
 ## Посилання на звіт:
-[Звіт на Google Drive](https://docs.google.com/document/d/1NWhpI98wJ6u0TZR_RcS9MSkBmGLaujtuXQ49D-yJnN4/edit?usp=sharing)
+[Звіт на Google Drive](https://docs.google.com/document/d/1NQPOmziWOTbdMI_tco-L3JYNW4uNb9E4a9XeGzBViEY/edit?usp=sharing)
