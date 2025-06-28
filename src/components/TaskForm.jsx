@@ -77,19 +77,25 @@ const TaskForm = ({ onAdd, onUpdate, editingTask, clearEdit }) => {
     >
       <input
         type="text"
+        data-cy="task-title"
         placeholder={t('dashboard.taskTitle')}
+        aria-label={t('dashboard.taskTitle')}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         className="w-full p-2 border rounded dark:text-orange-500 dark:bg-gray-800"
       />
       <input
         type="date"
+        data-cy="task-date"
+        aria-label="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
         className="w-full p-2 border rounded dark:text-orange-500 dark:bg-gray-800 dark:[color-scheme:dark]"
       />
       <input
         type="time"
+        data-cy="task-time"
+        aria-label="time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
         className="w-full p-2 border rounded dark:text-orange-500 dark:bg-gray-800 dark:[color-scheme:dark]"
@@ -97,6 +103,7 @@ const TaskForm = ({ onAdd, onUpdate, editingTask, clearEdit }) => {
       {!autoSave && (
         <button
           type="submit"
+          data-cy="submit-task"
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
         >
           {editingTask ? t('dashboard.updateTask') : t('dashboard.addTask')}
@@ -104,6 +111,7 @@ const TaskForm = ({ onAdd, onUpdate, editingTask, clearEdit }) => {
       )}
       {editingTask && (
         <button
+          data-cy="cancel-edit"
           type="button"
           onClick={clearEdit}
           className="w-full bg-gray-500 text-white py-2 rounded hover:bg-gray-600"

@@ -12,6 +12,8 @@ const Settings = () => {
   const [notifications, setNotifications] = useState(true);
   const [autoSave, setAutoSave] = useState(false);
 
+  const [message, setMessage] = useState('');
+
   const navigate = useNavigate();
 
   const handleDeleteAccount = () => {
@@ -40,7 +42,7 @@ const Settings = () => {
     localStorage.setItem('appSettings', JSON.stringify(settings));
     i18n.changeLanguage(language);
     localStorage.setItem('language', language);
-    alert(t('settings.save'));
+    setMessage(t('settings.save')); // замість alert
   };
 
   return (
@@ -51,6 +53,7 @@ const Settings = () => {
         <div>
           <label className="block font-semibold mb-1">{t('settings.theme')}</label>
           <select
+            data-cy="select-theme"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             className="w-full border p-2 rounded dark:text-orange-500 dark:bg-gray-700"
@@ -63,6 +66,7 @@ const Settings = () => {
         <div>
           <label className="block font-semibold mb-1">{t('settings.language')}</label>
           <select
+            data-cy="select-language"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
             className="w-full border p-2 rounded dark:text-orange-500 dark:bg-gray-700"
@@ -74,6 +78,7 @@ const Settings = () => {
 
         <div className="flex items-center gap-2">
           <input
+            data-cy="checkbox-notifications"
             type="checkbox"
             checked={notifications}
             onChange={() => setNotifications(!notifications)}
@@ -83,6 +88,7 @@ const Settings = () => {
 
         <div className="flex items-center gap-2">
           <input
+            data-cy="checkbox-auto-save"
             type="checkbox"
             checked={autoSave}
             onChange={() => setAutoSave(!autoSave)}
@@ -91,6 +97,7 @@ const Settings = () => {
         </div>
 
         <button
+          data-cy="button-save"
           onClick={handleSave}
           className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >
@@ -103,6 +110,9 @@ const Settings = () => {
         >
           {t('settings.deleteAccount')}
         </button>
+        {message && (
+          <p data-cy="save-message" className="mt-4 text-green-600">{message}</p>
+        )}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const Login = () => {
   e.preventDefault();
   const user = JSON.parse(localStorage.getItem('user'));
   if (user && user.email === email && user.password === password) {
-    localStorage.setItem('auth', 'true'); // ← ось це додаємо
+    localStorage.setItem('auth', 'true');
     navigate('/dashboard');
   } else {
     setError(t('login.error'));
@@ -30,12 +30,13 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="w-full max-w-sm p-6 bg-white dark:bg-gray-800 rounded shadow-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+        <h2 data-cy="login-title" className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
           {t('login.title')}
         </h2>
         <form className="space-y-4" onSubmit={handleLogin}>
           <input
             type="email"
+            data-cy="input-email"
             placeholder={t('login.email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -44,6 +45,7 @@ const Login = () => {
           />
           <input
             type="password"
+            data-cy="input-password"
             placeholder={t('login.password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -51,14 +53,15 @@ const Login = () => {
             required
           />
           <button
+            data-cy="login-btn"
             type="submit"
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
           >
             {t('login.submit')}
           </button>
-          {error && <p className="text-red-600 text-sm text-center">{error}</p>}
+          {error && <p data-cy="login-error" className="text-red-600 text-sm text-center">{error}</p>}
         </form>
-        <p className="mt-4 text-sm text-center text-gray-700 dark:text-gray-300">
+        <p data-cy="login-register" className="mt-4 text-sm text-center text-gray-700 dark:text-gray-300">
           {t('login.noAccount')}{' '}
           <Link to="/register" className="text-blue-600 hover:underline">
             {t('register.title')}

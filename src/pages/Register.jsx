@@ -28,6 +28,7 @@ const Register = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
+            data-cy="input-name"
             placeholder={t('register.name')}
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -35,6 +36,7 @@ const Register = () => {
             required
           />
           <select
+            data-cy="select-gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
             className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white"
@@ -46,6 +48,7 @@ const Register = () => {
           </select>
           <input
             type="email"
+            data-cy="input-email"
             placeholder={t('register.email')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -54,6 +57,7 @@ const Register = () => {
           />
           <input
             type="password"
+            data-cy="input-password"
             placeholder={t('register.password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -62,6 +66,7 @@ const Register = () => {
           />
           <button
             type="submit"
+            data-cy="submit-btn"
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
           >
             {t('register.submit')}

@@ -45,18 +45,20 @@ const TaskList = ({ tasks, onEdit, onDelete }) => {
             {groupedTasks[date]
               .sort((a, b) => a.time.localeCompare(b.time))
               .map((task) => (
-                <li key={task.id} className="flex justify-between items-center">
+                <li data-cy="task-item" key={task.id} className="flex justify-between items-center">
                   <span>
                     <strong>[{task.time}]</strong> {task.title}
                   </span>
                   <div className="space-x-2">
                     <button
+                      data-cy="edit-task"
                       onClick={() => onEdit(task)}
                       className="text-blue-600 hover:underline"
                     >
                       {t('dashboard.edit')}
                     </button>
                     <button
+                      data-cy="delete-task"
                       onClick={() => onDelete(task.id)}
                       className="text-red-600 hover:underline"
                     >
